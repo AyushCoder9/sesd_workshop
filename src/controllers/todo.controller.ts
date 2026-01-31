@@ -14,7 +14,7 @@ class TodoController {
       if (!title || typeof title !== "string") {
         return res
           .status(400)
-          .json({ message: "title is required and must be a string" });
+          .json({ message: "Invalid input, title is required and must be a string" });
       }
 
       if (status !== undefined && typeof status !== "boolean") {

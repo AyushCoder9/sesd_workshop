@@ -14,7 +14,7 @@ class TodoController {
       if (!title || typeof title !== "string") {
         return res
           .status(400)
-          .json({ message: "Invalid input, title is required and must be a string" });
+          .json({ message: "title is required and must be a string" });
       }
 
       if (status !== undefined && typeof status !== "boolean") {
@@ -28,7 +28,7 @@ class TodoController {
       return res.status(201).json(todo);
     } catch (err) {
       console.error(err);
-      return res.status(500).json({ message: "Failed to create todo" });
+      return res.status(500).json({ message: "Error found: Failed to create todo" });
     }
   };
 }
